@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    :root{
+        --color-white : hsl(252,30%,100%);
+        --color-light : hsl(252,30%,95%);
+        --color-gray : hsl(252, 15%,65%);
+        --color-primary : hsl(36, 100%, 54%);
+        --color-secondary : hsl(14, 79%, 48%);
+        --color-success : hsl(125, 53%, 42%);
+        --color-danger : hsl(0, 79%, 48%);
+        --color-dark : hsl(252,30%,17%);
+        --color-black : hsl(252,30%,10%);
+
+        --border-radius: 2rem;
+        --card-border-radius: 1rem;
+        --btn-padding: 0.6rem 2rem;
+        --search-padding: 0.6rem 1rem;
+        --card-padding: 1rem;
+    }
+
+    *, *::before,   *::after{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    }
+
+    body{
+        font-family: "Barlow Condensed", sans-serif;
+        color: var(--color-dark);
+        background:  var(--color-light) ;
+        overflow-x: hidden;
+    }
+
+    .container{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .profile-photo{
+        width: 2.7rem;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .profile-photo:hover {
+        opacity:0.8;
+        cursor: pointer;
+    }
+
+    img{
+        display: block;
+        width: 100%;
+    }
+
+    /*botones go btrrr*/
+
+    .btn{
+        display: inline-block;
+        padding: var(--btn-padding);
+        font-weight: 500;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        transition: all 300ms ease;
+        font-size: 0.9rem;
+    }
+
+    .btn:hover{
+        opacity:0.8;
+    }
+
+    .btn-primary{
+        background: var(--color-primary);
+        color: white;
+    }
+    .text-bold{
+        font-weight: 500;
+    }
+    .text-muted{
+        color:  var(--color-gray);
+    }
+
+    /* barra */
+
+    nav{
+        width: 100%;
+        background: var(--color-white);
+        padding: 0.7rem 0;
+        position:fixed;
+        top:0;
+        z-index: 10;
+    }
+
+    nav .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    nav .search-bar{
+        background: var(--color-light);
+        border-radius: var(--border-radius);
+        padding: var(--search-padding);
+    }
+
+    nav .search-bar input[type = "search"]{
+        background: transparent;
+        width: 30vw;
+        margin-left: 1rem;
+        font-size: 0.9rem;
+        color: var(--color-dark);
+    }
+    nav .search-bar input[type = "search"]::placeholder{
+        color: var(--color-gray);
+    }
+
+    nav .create{
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    /* menuuu*/
+
+    .sub-menu-wrap{
+        position: absolute;
+        top: 100%;
+        right: 10%;
+        width: 320px;
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height 0.5s;
+    }
+
+    .sub-menu-wrap.open-menu{
+        max-height: 800px;
+    }
+
+    .sub-menu{
+        background: var(--color-light);
+        padding: 20px;
+        border: solid;
+        border-color: var(--color-primary);
+        margin: 10px;
+    }
+
+    .user-info{
+       display: flex;
+        align-items: center ;
+    }
+
+    .user-info h3{
+        font-weight: 500;
+    }
+
+    .user-info img{
+        width: 60px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+    .sub-menu hr{
+        border:0;
+        height: 1px;
+        width: 100%;
+        background: var(--color-primary);
+        margin: 15px 0 10px;
+    }
+
+    .sub-menu-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--color-dark);
+        margin: 12px 0;
+    }
+
+    .sub-menu-link p{
+        width:100%;
+    }
+
+    .sub-menu-link img{
+        width: 40px;
+        background: var(--color-primary);
+        border-radius: 50%;
+        padding: 8px;
+        margin-right: 15px;
+    }
+
+    .sub-menu-link span{
+        font-size: 22px;
+        transition: transform 0.5s;
+    }
+
+    .sub-menu-link:hover span{
+        transform: translateX(5px);
+    }
+
+    .sub-menu-link:hover p{
+        font-weight: 600;
+    }
+
+    /* posts*/
+
+.middle .create-post {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 80px;
+    background: var(--color-white);
+    padding: 0.4rem var(--card-padding);
+    border-radius: var(--border-radius);
+}
+
+.middle .create-post .profile-photo {
+    flex: 0 0 auto;
+    margin-right: 1rem;
+}
+
+.middle .create-post input[type='text'] {
+    flex: 1; /* Fill remaining space */
+    width: 50%; /* Reset width */
+    background: transparent;
+    color: var(--color-dark);
+    text-align: center; /* Center text */
+    margin-right: 1rem;
+}
+
+.middle .create-post label.btn {
+    margin-left: auto; /* Move button to the right */
+}
+
+
+/*  caja de commentarios                   */
+
+{box-sizing: border-box;}
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 70px;
+    right: 70px;
+    width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+    /* Other styles */
+}
+
+/* Full-width textarea */
+.form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+    background-color: var(--color-secondary);
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+}
+
+/* postsss*/
+
